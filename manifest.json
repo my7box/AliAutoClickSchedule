@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "Ali Auto Click Schedule",
+  "version": "1.1.0",
+"browser_specific_settings": {
+  "gecko": {
+    "id": "my7box@yahoo.com"
+  } 
+},
+
+  "description": " Auto Click Schedule is for clicking in a specified time.",
+  "homepage_url": "https://github.com/my7box/AliAutoClickSchedule",
+  "icons": {
+    "96": "icons/left-click-96.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/left-click-32.png",
+    "default_title": "Ali Auto Click Schedule"
+  }
+,
+  "permissions": [
+    "activeTab", "contextMenus"
+    ],
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["scripts/content.js"]
+    }
+  ],
+"background": {
+  "page": "background-page.html"
+},
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+
+}
